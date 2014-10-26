@@ -1,0 +1,4 @@
+~/tk_project_linux/tk_network_client/Build
+*.a
+*.cmake
+
