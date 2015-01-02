@@ -2,9 +2,9 @@ cmake_minimum_required (VERSION 2.6)
 
 set (PROJECT tk_client)
 
-set (HEADRES boost/asio.hpp network_client/network_client.h shared/types_client.h)
+set (HEADRES boost/asio.hpp network_client.h ../shared/types_client.h)
 
-set (SOURCES main.cpp network_client/network_client.cpp)
+set (SOURCES ../main.cpp network_client.cpp)
 
 set (LIBRARIES )
 

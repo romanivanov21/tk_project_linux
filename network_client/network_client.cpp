@@ -10,16 +10,19 @@
 #include "../shared/types_client.h"
 #include "network_client.h"
 
+#include <iostream>
 #include <boost/asio.hpp>  
+
 
 client_network::client_network(const std::string server_ip, const boost::uint32_t port): 
 server_ip_(server_ip),
 port_(port),
+endpoint_(boost::asio::ip::address::from_string("192.168.1.1"),8001),
 socket_(io_service_)
 {
-	boost::asio::ip::tcp::endpoint endpoint(boost::asio::ip::address::from_string(server_ip_),port_);
+  
 }
-void client_network::connect()
+void client_network::connect_to_server()
 {
 	try
 	{

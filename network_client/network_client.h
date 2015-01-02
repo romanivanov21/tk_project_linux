@@ -18,7 +18,7 @@ class client_network
 public:
 	explicit client_network(const std::string server_ip, const boost::uint32_t port);
 
-	void connect();
+	void connect_to_server();
 	void send_bytes(byte *data, const std::size_t &size);
 	boost::int32_t read_bytes(byte *data, const std::size_t &size);
 	boost::uint32_t current_port()const { return port_; }
@@ -26,13 +26,12 @@ public:
 
 	~client_network();
 private:
-
 	std::string server_ip_;
 	boost::uint32_t port_;
-
+	
 	boost::asio::io_service io_service_;
-	boost::asio::ip::tcp::socket socket_;
 	boost::asio::ip::tcp::endpoint endpoint_;
+	boost::asio::ip::tcp::socket socket_;
 };
 
 #endif
