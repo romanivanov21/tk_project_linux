@@ -1,6 +1,6 @@
 #include <iostream>
 #include "network_client/network_client.h"
-#include "shared/types_client.h"
+#include "crypt_gost_28147-89/crypt_gost_types.h"
 
 void sync_echo() 
 {
